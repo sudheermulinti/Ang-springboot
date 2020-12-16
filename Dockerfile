@@ -4,7 +4,7 @@ RUN mkdir -p /app
 
 WORKDIR  /app
 
-COPY ./Package*.json .
+COPY ./package*.json .
 
 RUN npm install
 
