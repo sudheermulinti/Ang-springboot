@@ -7,9 +7,9 @@ WORKDIR  /app
 COPY ./package*.json ./
 
 RUN npm install
-COPY . /app/
+COPY ./src/app/  /app/
 RUN npm run build 
 
 FROM nginx:1.17.1-alpine
 
-COPY --from=build /app/dist /usr/share/nginx/html
+COPY --from=build /app/dist/app /usr/share/nginx/html
